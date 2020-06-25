@@ -36,6 +36,11 @@ function GetDataSets(data) {
 //Draw charts
 function DrawCharts() {
     Highcharts.chart('highcharts-figure', {
+        tooltip: {
+            formatter: function() {
+                return  this.x + '</b> Vs <b>' + this.y ;
+            }
+        },
         chart: {
             type: 'scatter',
             zoomType: 'xy'
@@ -90,12 +95,12 @@ function DrawCharts() {
                 },
                 tooltip: {
                     headerFormat: '<b>{series.name}</b><br>',
-                    pointFormat: '{point.x} mins, {point.y} mins'
+                    pointFormat: '{this.x} mins, {this.y} mins'
                 }
             }
         },
         series: [{
-            name: 'Delay',
+            name: 'Departure Vs Arrival',
             color: 'rgba(223, 83, 83, .5)',
             data: dataSets
         }]

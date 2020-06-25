@@ -58,6 +58,11 @@ $(document).ready(function () {
             $('#loading').hide();
             //Draw the chart 
             Highcharts.chart('highcharts-figure', {
+                tooltip: {
+                    formatter: function() {
+                        return 'Air carrier <b>' + this.x + '</b> has <b>' + this.y + '</b> '+ 'number of flights';
+                    }
+                },
                 chart: {
                     type: 'bar',
                     zoomType: 'x',
