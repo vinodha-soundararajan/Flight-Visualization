@@ -55,7 +55,7 @@ $(document).ready(function () {
 
             //Calculate the series data to draw the chart 
             var seriesDataCalculated = CalculateSeriesData(data, airlinesMap);
-
+            $('#loading').hide();
             //Draw the chart 
             Highcharts.chart('highcharts-figure', {
                 chart: {

@@ -3,6 +3,7 @@ var dataSets = [];
 //process data sets for the chart
 function ProcessDataSets(data) {
     GetDataSets(data);
+    $('#loading').hide();
     //calls the method to draw the chart
     DrawCharts();
 }
